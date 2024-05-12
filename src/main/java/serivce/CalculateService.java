@@ -4,6 +4,7 @@ import entity.coupon.DiscountCoupon;
 import entity.discount.DisCount;
 import entity.merchandise.Merchandise;
 import enums.MerchandiseType;
+import lombok.AllArgsConstructor;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -11,6 +12,7 @@ import java.util.*;
 
 import static java.util.stream.Collectors.groupingBy;
 
+@AllArgsConstructor(access = lombok.AccessLevel.PRIVATE)
 public class CalculateService {
 
     public static BigDecimal calculate(List<DisCount> disCountList,
@@ -36,8 +38,6 @@ public class CalculateService {
                     }
                 })
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
-
-
 
         discountCouponList.sort(Comparator.comparing(DiscountCoupon::getDate));
         Optional<DiscountCoupon> first = discountCouponList.stream()

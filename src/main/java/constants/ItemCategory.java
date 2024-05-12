@@ -1,17 +1,17 @@
-package main.Main;
+package constants;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
-public class MyMain {
+public class ItemCategory {
 
-    private static String FILE_NAME = "merchandise.txt";
-    public static Map<String, String> itemToCategoryMap = new HashMap<>();
+    public static Map<String, String> ITEM_TO_CATEGORY_MAP = new HashMap<>();
 
     static {
         try {
-            InputStream inputStream = MyMain.class.getResourceAsStream("/" + FILE_NAME);
+            String FILE_NAME = "merchandise.txt";
+            InputStream inputStream = ItemCategory.class.getResourceAsStream("/" + FILE_NAME);
             BufferedReader fileReader = new BufferedReader(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
             String line;
             while ((line = fileReader.readLine()) != null) {
@@ -23,13 +23,13 @@ public class MyMain {
                     String[] items = parts[1].split("，");
                     // 建立物品到分类的映射
                     for (String item : items) {
-                        itemToCategoryMap.put(item.trim(), category);
+                        ITEM_TO_CATEGORY_MAP.put(item.trim(), category);
                     }
                 }
             }
             fileReader.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new IllegalArgumentException(e);
         }
     }
 

@@ -3,8 +3,6 @@ package serivce;
 import entity.coupon.DiscountCoupon;
 import entity.discount.DisCount;
 import entity.merchandise.Merchandise;
-import main.Main.MyMain;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import utils.DateUtils;
 
@@ -80,4 +78,22 @@ class CalculateServiceTest {
         assertEquals(BigDecimal.valueOf(41.54).setScale(2), res);
     }
 
+    @Test
+    void test_calculate_with_different_merchandise_types() {
+        List<DisCount> discount_type_list = new ArrayList<>();
+        discount_type_list.add(DiscountService.formStr("2013.11.11 | 0.7 | 电子"));
+        discount_type_list.add(DiscountService.formStr("2013.11.11 | 0.8 | 食品"));
+
+        List<Merchandise> merchandise_type_list = new ArrayList<>();
+        merchandise_type_list.add(ObtainMerchandiseInfo.handleMerchandiseInfo("1 * ipad : 2399.00")); // 电子
+        merchandise_type_list.add(ObtainMerchandiseInfo.handleMerchandiseInfo("1 * 显示器 : 1799.00")); // 电子
+        merchandise_type_list.add(ObtainMerchandiseInfo.handleMerchandiseInfo("12 * 啤酒 : 25.00")); // 食品
+        merchandise_type_list.add(ObtainMerchandiseInfo.handleMerchandiseInfo("5 * 面包 : 9.00")); // 食品
+        Date calDate = DateUtils.formatDate("2013.11.11");
+        List<DiscountCoupon> discountCouponList = new ArrayList<>();
+        discountCouponList.add(DiscountCouponService.handleDiscountCoupon("2014.3.2 1000 200"));
+
+        BigDecimal res = CalculateService.calculate(discount_type_list, merchandise_type_list, calDate, discountCouponList);
+        assertEquals(BigDecimal.valueOf(3074.60).setScale(2), res);
+    }
 }

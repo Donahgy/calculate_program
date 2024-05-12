@@ -1,11 +1,14 @@
 package serivce;
 
 import entity.coupon.DiscountCoupon;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import utils.DateUtils;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class DiscountCouponService {
 
 
@@ -22,7 +25,6 @@ public class DiscountCouponService {
     }
 
     private static Date handleDate(String str) {
-
         String s = str.trim().split(" ")[0].trim();
         return DateUtils.formatDate(s);
     }
@@ -46,7 +48,6 @@ public class DiscountCouponService {
         } catch (Exception e) {
             throw new IllegalArgumentException("输入异常 请检查后重新输入");
         }
-
     }
 
 

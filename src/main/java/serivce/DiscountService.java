@@ -2,12 +2,14 @@ package serivce;
 
 import entity.discount.DisCount;
 import enums.MerchandiseType;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import utils.DateUtils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class DiscountService {
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd");
 

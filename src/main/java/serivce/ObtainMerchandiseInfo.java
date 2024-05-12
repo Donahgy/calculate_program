@@ -2,15 +2,18 @@ package serivce;
 
 import entity.merchandise.Merchandise;
 import enums.MerchandiseType;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 
-import static main.Main.MyMain.itemToCategoryMap;
+import static constants.ItemCategory.ITEM_TO_CATEGORY_MAP;
 
 /**
  * 获取商品信息
  */
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class ObtainMerchandiseInfo {
 
     public static Merchandise handleMerchandiseInfo(String str) {
@@ -22,13 +25,13 @@ public class ObtainMerchandiseInfo {
     }
 
     private static MerchandiseType handleType(String name) {
-        String categoryName = itemToCategoryMap.get(name);
+        String categoryName = ITEM_TO_CATEGORY_MAP.get(name);
         return MerchandiseType.formSt(categoryName);
     }
 
     private static String handleName(String str) {
         String name = str.split("\\*")[1].split(":")[0].trim();
-        if (!itemToCategoryMap.containsKey(name)) {
+        if (!ITEM_TO_CATEGORY_MAP.containsKey(name)) {
             throw new IllegalArgumentException("所购产品不合法，请检查后重新输入");
         }
         return name;
