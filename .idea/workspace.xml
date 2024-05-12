@@ -5,14 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="833995b1-406d-4106-aea6-3e628473a30e" name="Changes" comment="提交第一个测试程序">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/coupon/DiscountCoupon.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/discount/DisCount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/merchandise/Merchandise.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/entity/merchandistype/MerchandiseType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/serivce/ObtainMerchandiseInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/entity/order/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/enums/MerchandiseType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/Main/MyMain.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/serivce/DiscountService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/serivce/DIstonctServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/serivce/ObtainMerchandiseInfoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/coupon/DiscountCoupon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/coupon/DiscountCoupon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/discount/DisCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/discount/DisCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/merchandise/Merchandise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/entity/merchandise/Merchandise.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/entity/merchandistype/MerchandiseType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/serivce/ObtainMerchandiseInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/serivce/ObtainMerchandiseInfo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,18 +33,31 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="C:\maven_repository" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../apache-maven-3.8.6" />
+        <option name="userSettingsFile" value="C:\apache-maven-3.8.6\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
   <component name="ProjectId" id="2gK2etLSrSfug0eHsjdE4FbeOlW" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,13 +66,51 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "last_opened_file_path": "C:/Java/calculate_program/src/test",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.5481629",
+    "settings.editor.selected.configurable": "MavenSettings"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="serivce" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Java\calculate_program\src\test" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="serivce" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="serivce" />
+      <recent name="enums" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn test" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Test">
+    <configuration name="MyMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main.MyMain" />
       <module name="calculate_program" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.Main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -63,10 +122,69 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CalculateServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="calculate_program" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="serivce.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="serivce" />
+      <option name="MAIN_CLASS_NAME" value="serivce.CalculateServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CalculateServiceTest.success_cal_has_2_discount_coupon" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="calculate_program" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="serivce.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="serivce" />
+      <option name="MAIN_CLASS_NAME" value="serivce.CalculateServiceTest" />
+      <option name="METHOD_NAME" value="success_cal_has_2_discount_coupon" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="calculate_program [test]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="test" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Test" />
+        <item itemvalue="Maven.calculate_program [test]" />
+        <item itemvalue="JUnit.CalculateServiceTest" />
+        <item itemvalue="Application.MyMain" />
+        <item itemvalue="JUnit.CalculateServiceTest.success_cal_has_2_discount_coupon" />
       </list>
     </recent_temporary>
   </component>
@@ -79,6 +197,8 @@
       <option name="presentableId" value="Default" />
       <updated>1715432047314</updated>
       <workItem from="1715432048669" duration="7464000" />
+      <workItem from="1715481897657" duration="6576000" />
+      <workItem from="1715494046341" duration="15688000" />
     </task>
     <task id="LOCAL-00001" summary="创建项目">
       <created>1715432129328</created>
@@ -115,5 +235,34 @@
     <MESSAGE value="创建项目" />
     <MESSAGE value="提交第一个测试程序" />
     <option name="LAST_COMMIT_MESSAGE" value="提交第一个测试程序" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/enums/MerchandiseType.java</url>
+          <line>18</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/serivce/ObtainMerchandiseInfo.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/serivce/CalculateServiceTest.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/calculate_program$TypeTest_should_success_format_test.ic" NAME="TypeTest.should_success_format_test Coverage Results" MODIFIED="1715486153123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>enums.*</FILTER>
+    </SUITE>
   </component>
 </project>

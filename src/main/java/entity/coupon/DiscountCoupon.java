@@ -1,51 +1,27 @@
 package entity.coupon;
 
-import javax.xml.crypto.Data;
+import lombok.*;
+
+import java.math.BigDecimal;
+import java.util.Date;
 
 /**
- *  优惠券实体类
+ * 优惠券实体类
  */
+@NoArgsConstructor
+@AllArgsConstructor
+@Setter
+@Getter
+@ToString
 public class DiscountCoupon {
 
     // 优惠券截至日期
-    private Data date;
+    private Date date;
 
     // 需要满足减免的总价
-    private Double enoughDiscount;
+    private BigDecimal enoughDiscount;
 
     // 减免的价钱
-    private Double minusCount;
+    private BigDecimal minusCount;
 
-    public DiscountCoupon() {
-    }
-
-    public DiscountCoupon(Data date, Double enoughDiscount, Double minusCount) {
-        this.date = date;
-        this.enoughDiscount = enoughDiscount;
-        this.minusCount = minusCount;
-    }
-
-    public Data getDate() {
-        return date;
-    }
-
-    public void setDate(Data date) {
-        this.date = date;
-    }
-
-    public Double getEnoughDiscount() {
-        return enoughDiscount;
-    }
-
-    public void setEnoughDiscount(Double enoughDiscount) {
-        this.enoughDiscount = enoughDiscount;
-    }
-
-    public Double getMinusCount() {
-        return minusCount;
-    }
-
-    public void setMinusCount(Double minusCount) {
-        this.minusCount = minusCount;
-    }
 }

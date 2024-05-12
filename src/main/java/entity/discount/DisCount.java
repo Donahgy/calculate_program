@@ -1,12 +1,18 @@
 package entity.discount;
 
-import entity.merchandistype.MerchandiseType;
+import enums.MerchandiseType;
+import lombok.*;
 
 import java.util.Date;
 
 /**
  *  折扣类
  */
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 public class DisCount {
 
     // 日期
@@ -17,37 +23,4 @@ public class DisCount {
 
     // 折扣类型
     private MerchandiseType merchandiseType;
-
-    public DisCount() {
-    }
-
-    public DisCount(Date date, Double discount, MerchandiseType merchandiseType) {
-        this.date = date;
-        this.discount = discount;
-        this.merchandiseType = merchandiseType;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Double getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(Double discount) {
-        this.discount = discount;
-    }
-
-    public MerchandiseType getMerchandiseType() {
-        return merchandiseType;
-    }
-
-    public void setMerchandiseType(MerchandiseType merchandiseType) {
-        this.merchandiseType = merchandiseType;
-    }
 }

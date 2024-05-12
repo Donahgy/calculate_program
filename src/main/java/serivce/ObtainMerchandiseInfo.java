@@ -1,48 +1,64 @@
 package serivce;
 
 import entity.merchandise.Merchandise;
-import entity.merchandistype.MerchandiseType;
+import enums.MerchandiseType;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.math.BigDecimal;
+import java.util.Objects;
+
+import static main.Main.MyMain.itemToCategoryMap;
 
 /**
  * 获取商品信息
  */
 public class ObtainMerchandiseInfo {
 
-    static MerchandiseType electronicMerchandiseType = new MerchandiseType();
-    static MerchandiseType foodMerchandiseType = new MerchandiseType();
-    static MerchandiseType dailyMerchandiseType = new MerchandiseType();
-    static MerchandiseType drinksMerchandiseType = new MerchandiseType();
-
-    static {
-        electronicMerchandiseType.setMerchandiseName("电子");
+    public static Merchandise handleMerchandiseInfo(String str) {
+        String name = handleName(str);
+        MerchandiseType merchandiseType = handleType(name);
+        Integer count = handlePurchaseQuantity(str);
+        BigDecimal price = handlePrice(str);
+        return new Merchandise(name, price, count, merchandiseType);
     }
 
-    public Merchandise obtainMerchandiseInfo(String merchandiseStr) {
-        Merchandise merchandise = new Merchandise();
-        // 定义正则表达式，匹配“数量 * 商品名 : 价格”格式的字符串，商品名可能包含中文字符
-        String regex = "(\\d+) \\* (.+?) : (\\d+\\.\\d+)";
-        // 编译正则表达式
-        Pattern pattern = Pattern.compile(regex);
-        // 创建匹配器
-        Matcher matcher = pattern.matcher(merchandiseStr);
-        // 如果匹配成功，提取匹配到的部分
-        if (matcher.find()) {
-            String quantity = matcher.group(1); // 数量
-            String merchandiseName = matcher.group(2); // 商品名
-            String price = matcher.group(3); // 价格
+    private static MerchandiseType handleType(String name) {
+        String categoryName = itemToCategoryMap.get(name);
+        return MerchandiseType.formSt(categoryName);
+    }
 
-            merchandise.setPrice(Double.parseDouble(price));
-            merchandise.setCount(Integer.parseInt(quantity));
-            merchandise.setMerchandise_name(merchandiseName);
-
-        } else {
-            System.out.println("输入字符串格式不正确。");
+    private static String handleName(String str) {
+        String name = str.split("\\*")[1].split(":")[0].trim();
+        if (!itemToCategoryMap.containsKey(name)) {
+            throw new IllegalArgumentException("所购产品不合法，请检查后重新输入");
         }
-        return merchandise;
+        return name;
+    }
+
+    private static BigDecimal handlePrice(String str) {
+        String priceStr = str.split("\\*")[1].split(":")[1];
+        if (Objects.nonNull(priceStr)) {
+            double prices;
+            try {
+                prices = Double.parseDouble(priceStr.trim());
+                if (0 < prices) {
+                    return BigDecimal.valueOf(prices);
+                } else {
+                    throw new IllegalArgumentException("输入的商品单价不合法，请检查后重新输入");
+                }
+            } catch (Exception e) {
+                throw new IllegalArgumentException("输入的商品单价不合法，请检查后重新输入");
+            }
+        }
+        throw new IllegalArgumentException("所采购的商品不在商品清单中，请检查后重新输入");
+    }
+
+
+    private static int handlePurchaseQuantity(String str) {
+        try {
+            String purchaseQuantity = str.split("\\*")[0];
+            return Integer.parseUnsignedInt(purchaseQuantity.trim());
+        } catch (Exception e) {
+            throw new IllegalArgumentException("采购数量只能为正整数，请检查后重新输入");
+        }
     }
 }
