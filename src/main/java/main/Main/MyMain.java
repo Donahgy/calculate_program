@@ -1,15 +1,10 @@
 package main.Main;
 
-import entity.merchandise.Merchandise;
-import enums.MerchandiseType;
-
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public class MyMain {
-
-    static Map<MerchandiseType, List<Merchandise>> map = new HashMap<>();
 
     private static String FILE_NAME = "merchandise.txt";
     public static Map<String, String> itemToCategoryMap = new HashMap<>();
